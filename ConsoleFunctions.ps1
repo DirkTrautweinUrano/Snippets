@@ -10,7 +10,7 @@ function Copy-CommandLine([int]$CommandHistoryNumber = 0){
        }
        
        $cmd = Get-History -Id $CommandHistoryNumber -ErrorAction SilentlyContinue
-       if ($cmd -ne $null)
+       if ($null -ne $cmd)
        {
              $cmd.CommandLine | clip
              Write-Host "Copied the following command line to clip board:" -ForegroundColor Green
